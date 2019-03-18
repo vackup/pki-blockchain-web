@@ -798,35 +798,35 @@ func PkiForm(w http.ResponseWriter, r *http.Request) {
 		}
 		regDatum.EthAccCA, err = pkiWebContr.GetRegEthAccCA(callOpts, parentAddr, bi)
 		if err != nil {
-			http.Error(w, fmt.Sprintf("Data is not retrieved: %v", err), http.StatusInternalServerError)
+			http.Error(w, fmt.Sprintf("2 Data is not retrieved: %v", err), http.StatusInternalServerError)
 			return
 		}
 		tmpHash, err := pkiContr.GetRegDataHash(callOpts, bi)
 		if err != nil {
-			http.Error(w, fmt.Sprintf("Data is not retrieved: %v", err), http.StatusInternalServerError)
+			http.Error(w, fmt.Sprintf("3 Data is not retrieved: %v", err), http.StatusInternalServerError)
 			return
 		}
 		regDatum.DataHash = tmpHash[:]
 
 		regDatum.CreationDate, err = pkiContr.GetRegCreationDate(callOpts, bi)
 		if err != nil {
-			http.Error(w, fmt.Sprintf("Data is not retrieved: %v", err), http.StatusInternalServerError)
+			http.Error(w, fmt.Sprintf("4 Data is not retrieved: %v", err), http.StatusInternalServerError)
 			return
 		}
 		regDatum.FileName, err = pkiWebContr.GetRegFileName(callOpts, parentAddr, bi)
 		if err != nil {
-			http.Error(w, fmt.Sprintf("Data is not retrieved: %v", err), http.StatusInternalServerError)
+			http.Error(w, fmt.Sprintf("5 Data is not retrieved: %v", err), http.StatusInternalServerError)
 			return
 		}
 		regDatum.Description, err = pkiWebContr.GetRegDescription(callOpts, parentAddr, bi)
 		if err != nil {
-			http.Error(w, fmt.Sprintf("Data is not retrieved: %v", err), http.StatusInternalServerError)
+			http.Error(w, fmt.Sprintf("6 Data is not retrieved: %v", err), http.StatusInternalServerError)
 			return
 		}
 
 		delRegDate, err := pkiContr.GetDeletedRegDate(callOpts, bi)
 		if err != nil {
-			http.Error(w, fmt.Sprintf("Deleted data is not retrieved: %v", err),
+			http.Error(w, fmt.Sprintf("7 Deleted data is not retrieved: %v", err),
 				http.StatusInternalServerError)
 			return
 		}
