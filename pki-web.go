@@ -793,7 +793,7 @@ func PkiForm(w http.ResponseWriter, r *http.Request) {
 		var regDatum CRegData
 		regDatum.ContrAddr, err = pkiWebContr.GetRegContrAddr(callOpts, parentAddr, bi)
 		if err != nil {
-			http.Error(w, fmt.Sprintf("Data is not retrieved: %v", err), http.StatusInternalServerError)
+			http.Error(w, fmt.Sprintf("1 Data is not retrieved: %v", err), http.StatusInternalServerError)
 			return
 		}
 		regDatum.EthAccCA, err = pkiWebContr.GetRegEthAccCA(callOpts, parentAddr, bi)
