@@ -1,0 +1,1 @@
+docker run -p 3030:8081 -it --rm --name pki-web pki-blockchain-web-image
